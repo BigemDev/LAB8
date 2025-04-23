@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CardGames.MainWindow"
+        Title="CardGames">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+        <Button Content="Start Game" Width="200" Click="StartGameBigem_Click"/>
+        <!-- <Button Content="Option 2" Width="200" Click=""/> -->
+        <!-- <Button Content="Option 3" Width="200" Click=""/> -->
+        <Button Content="Exit" Width="200" Click="Exit_Click"/>
+    </StackPanel>
+</Window>
