@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CardGames.GameWindowBigem"
+        Title="Texas Hold'em Table"
+        Width="1000" Height="700">
+
+  <Grid RowDefinitions="Auto,*" ColumnDefinitions="3*,1*">
+    <!-- (optional) top row for menus or headers -->
+    
+    <!-- Table area -->
+    <Border Grid.Row="1" Grid.Column="0"
+            Margin="10" Background="#003300" CornerRadius="10" Padding="10">
+      <StackPanel Spacing="10">
+        <TextBlock Text="Community Cards"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Name="CommunityCardsPlaceholder"
+                   Text="No cards yet"
+                   Foreground="White"
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Text="Current Bets"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Margin="0,10,0,0"/>
+        <StackPanel Name="BetsDisplay"
+                    Orientation="Vertical"
+                    Background="#002200"
+                    />
+      </StackPanel>
+    </Border>
+
+    <!-- Control panel -->
+    <StackPanel Grid.Row="1" Grid.Column="1"
+                Margin="10"
+                Spacing="8">
+
+      <!-- New: show whose turn it is -->
+      <TextBlock Name="CurrentTurnText"
+                 FontSize="16"
+                 FontWeight="Bold"
+                 Foreground="White"/>
+
+      <!-- New: fixed “Your hand” display -->
+      <TextBlock Name="YourHandText"
+                 FontSize="14"
+                 FontWeight="SemiBold"
+                 Foreground="White"/>
+
+      <TextBlock Text="Status / Log"
+                 FontWeight="Bold"
+                 Foreground="White"/>
+      <TextBox Name="GameLog"
+               AcceptsReturn="True"
+               IsReadOnly="True"
+               Height="200"
+               />
+
+      <!-- Betting input -->
+      <TextBox Name="BetAmountTextBox"
+               Width="120"
+               Watermark="Enter Bet Amount"/>
+
+      <!-- Action buttons -->
+      <StackPanel Orientation="Horizontal"
+                  Spacing="5">
+        <Button Content="Start Game"
+                Click="StartGame_Click"/>
+        <Button Content="Bet"
+                Click="Bet_Click"/>
+        <Button Content="Call"
+                Click="Call_Click"/>
+        <Button Content="Check"
+                Click="Check_Click"/>
+        <Button Content="Fold"
+                Click="Fold_Click"/>
+        <Button Content="Leave Game"
+                Click="LeaveGame_Click"/>
+      </StackPanel>
+
+      <!-- Pot display -->
+      <TextBlock Text="Pot"
+                 FontWeight="Bold"
+                 Foreground="White"
+                 Margin="0,10,0,0"/>
+      <TextBlock Name="PotText"
+                 FontSize="14"
+                 Foreground="White"/>
+    </StackPanel>
+  </Grid>
+</Window>

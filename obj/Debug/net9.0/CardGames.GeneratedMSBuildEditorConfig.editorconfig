@@ -24,5 +24,8 @@ build_property.EnableCodeStyleSeverity =
 [/home/bigem/RiderProjects/CardGames/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/bigem/RiderProjects/CardGames/GameWindowBigem.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/bigem/RiderProjects/CardGames/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

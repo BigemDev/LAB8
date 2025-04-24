@@ -11,7 +11,8 @@ public partial class MainWindow : Window
     }
     private void StartGameBigem_Click(object? sender, RoutedEventArgs e)
     {
-        
+        GameWindowBigem game = new GameWindowBigem();
+        game.Show();
     }
     
     
