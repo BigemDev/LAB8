@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="900"
+        x:Class="CardGames.poczekalnia"
+        Title="poczekalnia">
+    <Grid>
+        <!-- Definicje wierszy i kolumn z procentowymi wartościami -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/> <!-- Górny pasek z przyciskami (20% wysokości) -->
+            <RowDefinition Height="3*"/> <!-- Środkowa sekcja z DataGrid (60% wysokości) -->
+            <RowDefinition Height="2*"/> <!-- Dolny pasek z przyciskami (20% wysokości) -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>  <!-- Lewa kolumna (15% szerokości) -->
+            <ColumnDefinition Width="4*"/>  <!-- Prawa kolumna (85% szerokości) -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Lewa kolumna z TextBlockami i przyciskiem -->
+        <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="Green">
+            <TextBlock Text="Label 1"></TextBlock>
+            <TextBlock Text="Label 2"></TextBlock>
+            <TextBlock Text="Label 3"></TextBlock>
+            <TextBlock Text="Label 4"></TextBlock>
+            <Button Content="Start"></Button>
+        </StackPanel>
+
+        <!-- Prawa kolumna z przyciskami i DataGrid -->
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="BlueViolet">
+            <Button Margin="40" Height="200" Width="150" Content="Button 1"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="Button 2"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="Button 3"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="Button 4"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="Button 5"></Button>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Grid.Column="1" Background="Fuchsia"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="CornflowerBlue">
+            <Button Margin="5" Height="190" Width="140" Content="Button 6"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 7"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 8"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 9"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 10"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 11"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 12"></Button>
+            <Button Margin="5" Height="190" Width="140" Content="Button 13"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
