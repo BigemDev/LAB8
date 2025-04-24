@@ -6,46 +6,43 @@
         x:Class="CardGames.poczekalnia"
         Title="poczekalnia">
     <Grid>
-        <!-- Definicje wierszy i kolumn z procentowymi wartościami -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/> <!-- Górny pasek z przyciskami (20% wysokości) -->
-            <RowDefinition Height="3*"/> <!-- Środkowa sekcja z DataGrid (60% wysokości) -->
-            <RowDefinition Height="2*"/> <!-- Dolny pasek z przyciskami (20% wysokości) -->
+            <RowDefinition Height="2*"/> 
+            <RowDefinition Height="3*"/> 
+            <RowDefinition Height="2*"/> 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>  <!-- Lewa kolumna (15% szerokości) -->
-            <ColumnDefinition Width="4*"/>  <!-- Prawa kolumna (85% szerokości) -->
+            <ColumnDefinition Width="1*"/> 
+            <ColumnDefinition Width="5*"/> 
         </Grid.ColumnDefinitions>
 
-        <!-- Lewa kolumna z TextBlockami i przyciskiem -->
-        <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="Green">
-            <TextBlock Text="Label 1"></TextBlock>
-            <TextBlock Text="Label 2"></TextBlock>
-            <TextBlock Text="Label 3"></TextBlock>
-            <TextBlock Text="Label 4"></TextBlock>
-            <Button Content="Start"></Button>
+        <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
+            <TextBox Margin="20, 30, 20, 10" Height="90" Width="170" Text="Próg"></TextBox>
+            <TextBox Margin="20, 20, 20, 20" Height="90" Width="170" Text="Punkty"></TextBox>
+            <TextBox Margin="20, 180, 20, 10" Height="90" Width="170" Text="Odrzucenia"></TextBox>
+            <TextBox Margin="20, 10, 20, 20" Height="90" Width="170" Text="Ręce"></TextBox>
+            <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="Start"></Button>
         </StackPanel>
 
-        <!-- Prawa kolumna z przyciskami i DataGrid -->
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="BlueViolet">
-            <Button Margin="40" Height="200" Width="150" Content="Button 1"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="Button 2"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="Button 3"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="Button 4"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="Button 5"></Button>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
+            <Button Margin="60, 40" Height="200" Width="150" Content="JOKER 1"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 2"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 3"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 4"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 20"></Button>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Grid.Column="1" Background="Fuchsia"/>
+        <DataGrid Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue"/>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="CornflowerBlue">
-            <Button Margin="5" Height="190" Width="140" Content="Button 6"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 7"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 8"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 9"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 10"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 11"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 12"></Button>
-            <Button Margin="5" Height="190" Width="140" Content="Button 13"></Button>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 1"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 2"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 3"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 4"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 20"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 6"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 7"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 8"></Button>
         </StackPanel>
     </Grid>
 </Window>
