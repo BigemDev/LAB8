@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        Background="MidnightBlue"
+        x:Class="CardGames.grawojna"
+        Title="grawojna">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                <Label x:Name="czeker1" Content=""></Label>
+                <Button Content="confirmg1" Width="200" Click="confirmg1_click"/>
+                <StackPanel x:Name="ListaKartgracz1" Orientation="Vertical" />
+                <Label x:Name="czeker2" Content=""></Label>
+                <Button Content="confirmg2" Width="200" Click="confirmg2_click"/>
+                <StackPanel x:Name="ListaKartgracz2" Orientation="Vertical" />
+                
+        </StackPanel>
+    
+</Window>

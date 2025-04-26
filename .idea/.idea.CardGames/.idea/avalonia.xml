@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="MainWindow.axaml" value="CardGames.csproj" />
+        <entry key="grawojna.axaml" value="CardGames.csproj" />
       </map>
     </option>
   </component>
