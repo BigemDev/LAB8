@@ -19,4 +19,10 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
     </ItemGroup>
+
+    <ItemGroup>
+      
+        <AvaloniaResource Include="foto.png" />
+      
+    </ItemGroup>
 </Project>

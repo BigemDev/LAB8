@@ -1,4 +1,6 @@
 using System;
+using System.Media;
+using System.Diagnostics;
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
@@ -9,6 +11,7 @@ namespace CardGames;
 
 public partial class grawojna : Window
 {
+    
     private List<int> wylosowaneKartygracz1 = new List<int>();
     private List<int> wylosowaneKartygracz2 = new List<int>();
     private List<int> stockgracz1 = new List<int>();
@@ -21,7 +24,10 @@ public partial class grawojna : Window
     public grawojna()
     {
         InitializeComponent();
-        for (int i = 0; i < 5; i++)
+       
+        
+
+        for (int i = 0; i < 3; i++)
         {
             generowanie();
         }
@@ -59,6 +65,44 @@ public partial class grawojna : Window
        
     }
 
+    private void generowanieporundzieg1()
+    {
+        for (int i = 0; i < stockgracz1.Count; i++)
+        {
+            var nowyButton = new Button
+            {
+                Content = $"{stockgracz1[i]}",
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
+            };
+            nowyButton.Click += (s, args) =>
+            {
+                liczbazaznaczona1 = int.Parse((string)nowyButton.Content);
+                czeker1.Content = $"zaznaczono";
+            };
+            ListaKartgracz1.Children.Add(nowyButton);
+        }
+        stockgracz1.Clear();
+        ZagrajDzwiek("skibidi.wav");
+    }
+    private void generowanieporundzieg2()
+    {
+        for (int i = 0; i < stockgracz2.Count; i++)
+        {
+            var nowyButton = new Button
+            {
+                Content = $"{stockgracz2[i]}",
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
+            };
+            nowyButton.Click += (s, args) =>
+            {
+                liczbazaznaczona2 = int.Parse((string)nowyButton.Content);
+                czeker2.Content = $"zaznaczono";
+            };
+            ListaKartgracz2.Children.Add(nowyButton);
+        }
+        stockgracz2.Clear();
+       
+    }
     private void confirmg1_click(object sender, RoutedEventArgs e)
     {
         czekgracz1 = true;
@@ -76,6 +120,7 @@ public partial class grawojna : Window
                 {
                     stockgracz1.Add(tymstock[i]);
                 }
+                tymstock.Clear();
                 
             }
             if (liczbazaznaczona1<liczbazaznaczona2)
@@ -84,6 +129,7 @@ public partial class grawojna : Window
                 {
                     stockgracz2.Add(tymstock[i]);
                 }
+                tymstock.Clear();
                 
             }
             string tym1=liczbazaznaczona1.ToString();
@@ -92,6 +138,16 @@ public partial class grawojna : Window
             UsunButtong2(tym2);
             
         }
+
+        if (ListaKartgracz1.Children.Count==0)
+        {
+            generowanieporundzieg1();
+        }
+        if (ListaKartgracz2.Children.Count==0)
+        {
+            generowanieporundzieg2();
+        }
+        endofgamu();
     }
     private void confirmg2_click(object sender, RoutedEventArgs e)
     {
@@ -130,4 +186,43 @@ public partial class grawojna : Window
             }
         }
     }
+
+    private void ZagrajDzwiek(string sciezka)
+    {
+        try
+        {
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "ffplay",
+                    Arguments = $"-nodisp -autoexit \"{sciezka}\"",
+                    RedirectStandardOutput = false,
+                    RedirectStandardError = false,
+                    UseShellExecute = true,
+                    CreateNoWindow = true
+                }
+            };
+            process.Start();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Błąd odtwarzania dźwięku: {ex.Message}");
+        }
+    }
+
+    private void endofgamu()
+    {
+        if (ListaKartgracz1.Children.Count==0&&stockgracz1.Count==0)
+        {
+            wygrany.Content = "wygral gracz 2";
+        }
+        if (ListaKartgracz2.Children.Count==0&&stockgracz2.Count==0)
+        {
+            wygrany.Content = "wygral gracz 1";
+        }
+    }
+    
+    
+
 }
