@@ -1,8 +1,50 @@
+
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="900"
         x:Class="CardGames.balatro"
         Title="balatro">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/> 
+            <RowDefinition Height="3*"/> 
+            <RowDefinition Height="2*"/> 
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/> 
+            <ColumnDefinition Width="5*"/> 
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
+            <TextBox Margin="20, 30, 20, 10" Height="90" Width="170" Text="Próg"></TextBox>
+            <TextBox Margin="20, 20, 20, 20" Height="90" Width="170" Text="Punkty"></TextBox>
+            <TextBox Margin="20, 180, 20, 10" Height="90" Width="170" Text="Odrzucenia"></TextBox>
+            <TextBox Margin="20, 10, 20, 20" Height="90" Width="170" Text="Ręce"></TextBox>
+            <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="Start"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
+            <Button Margin="60, 40" Height="200" Width="150" Content="JOKER 1"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 2"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 3"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 4"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 20"></Button>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 1"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 2"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 3"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 4"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 20"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 6"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 7"></Button>
+            <Button Margin="20" Height="190" Width="140" Content="KARTA 8"></Button>
+        </StackPanel>
+    </Grid>
 </Window>
+

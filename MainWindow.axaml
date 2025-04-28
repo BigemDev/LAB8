@@ -7,8 +7,7 @@
         Title="CardGames">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
         <Button Content="Start Game" Width="200" Click="StartGameBigem_Click"/>
-         <Button Content=":D" Width="200" Click="StartGameHoda_Click"/> 
-        <!-- <Button Content="Option 3" Width="200" Click=""/> -->
+        <Button Content=":D" Width="200" Click="StartGameHoda_Click"/> 
         <Button Content="Exit" Width="200" Click="Exit_Click"/>
     </StackPanel>
 </Window>

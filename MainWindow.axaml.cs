@@ -16,7 +16,6 @@ public partial class MainWindow : Window
         p.Show();
     }
     
-    
     private void Exit_Click(object? sender, RoutedEventArgs e) {
         Close();
     }
