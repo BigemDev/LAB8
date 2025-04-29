@@ -136,6 +136,7 @@ public partial class grawojna : Window
                     stockgracz1.Add(tymstock[i]);
                 }
                 tymstock.Clear();
+                remis.IsVisible = false;
                 
             }
             if (liczbazaznaczona1<liczbazaznaczona2)
@@ -145,7 +146,13 @@ public partial class grawojna : Window
                     stockgracz2.Add(tymstock[i]);
                 }
                 tymstock.Clear();
+                remis.IsVisible = false;
                 
+            }
+
+            if (liczbazaznaczona1==liczbazaznaczona2)
+            {
+                remis.IsVisible = true;
             }
             string tym1=liczbazaznaczona1.ToString();
             string tym2=liczbazaznaczona2.ToString();
@@ -166,13 +173,17 @@ public partial class grawojna : Window
         foreach (var btn in ListaKartgracz2.Children)
         {
             btn.IsVisible = true;
+            
         }
         foreach (var btn in ListaKartgracz1.Children)
         {
             btn.IsVisible = false;
+            
         }
         gracz1.IsVisible = false;
         gracz2.IsVisible = true;
+        bu2.IsVisible = true;  
+        bu1.IsVisible = false;
         endofgamu();
     }
     private void confirmg2_click(object sender, RoutedEventArgs e)
@@ -193,6 +204,7 @@ public partial class grawojna : Window
                     stockgracz1.Add(tymstock[i]);
                 }
                 tymstock.Clear();
+                remis.IsVisible = false;
                 
             }
             if (liczbazaznaczona1<liczbazaznaczona2)
@@ -202,7 +214,12 @@ public partial class grawojna : Window
                     stockgracz2.Add(tymstock[i]);
                 }
                 tymstock.Clear();
+                remis.IsVisible = false;
                 
+            }
+            if (liczbazaznaczona1==liczbazaznaczona2)
+            {
+                remis.IsVisible = true;
             }
             string tym1=liczbazaznaczona1.ToString();
             string tym2=liczbazaznaczona2.ToString();
@@ -230,6 +247,8 @@ public partial class grawojna : Window
         }
         gracz1.IsVisible = true;
         gracz2.IsVisible = false;
+        bu1.IsVisible = true;
+        bu2.IsVisible = false;
         endofgamu();
     }
     
@@ -286,6 +305,7 @@ public partial class grawojna : Window
 
     private void endofgamu()
     {
+        remis.IsVisible = false;
         if (ListaKartgracz1.Children.Count==0&&stockgracz1.Count==0)
         {
             ZagrajDzwiek("wygrana.mp3");
