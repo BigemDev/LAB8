@@ -35,6 +35,7 @@ public partial class grawojna : Window
     }
     private void generowanie()
     {
+        ZagrajDzwiek("select.mp3");
         var random = new Random();
         int number = random.Next(2, 15);
         int number2 = random.Next(2, 15);
