@@ -3,22 +3,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        Background="MidnightBlue"
         x:Class="CardGames.grawojna"
         Title="grawojna">
+        <Window.Background>
+                <ImageBrush Source= "tlo.png" Stretch="UniformToFill"/>
+        </Window.Background>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                <Label x:Name="wygrany" Content="" FontSize="50" Foreground="LimeGreen"></Label>
                 <Panel x:Name="panelu">
-                        <Image Source="/foto.png" Height="200" Width="200"/>
-                        <Label x:Name="wygrany" Content=""></Label>
+                        <Image x:Name="gracz1" Source="/foto.png" Height="200" Width="200" IsVisible="True"/>
+                        <Image x:Name="gracz2" Source="/photo.png" Height="200" Width="200" IsVisible="False"/>
+                        
                 </Panel>
                         
                        
                 
                 <Label x:Name="czeker1" Content=""></Label>
-                <Button Content="confirmg1" Width="200" Click="confirmg1_click"/>
+                <Button x:Name="bu1" Content="confirmg1" Width="200" Click="confirmg1_click" Background="Chartreuse"/>
                 <StackPanel x:Name="ListaKartgracz1" Orientation="Vertical" />
                 <Label x:Name="czeker2" Content=""></Label>
-                <Button Content="confirmg2" Width="200" Click="confirmg2_click"/>
+                <Button x:Name="bu2" Content="confirmg2" Width="200" Click="confirmg2_click" Background="Chartreuse"/>
                 <StackPanel x:Name="ListaKartgracz2" Orientation="Vertical" />
                 
         </StackPanel>

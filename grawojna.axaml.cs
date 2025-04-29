@@ -3,6 +3,7 @@ using System.Media;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Avalonia;
+using Avalonia.Media;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
@@ -42,6 +43,7 @@ public partial class grawojna : Window
        wylosowaneKartygracz2.Add(number2);
        var nowyButton = new Button
        {
+           Background = Brushes.White,
            Content = $"{number}",
            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
        };
@@ -53,9 +55,11 @@ public partial class grawojna : Window
        ListaKartgracz1.Children.Add(nowyButton);
        var nowyButton2 = new Button
        {
+           Background = Brushes.White,
            Content = $"{number2}",
            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
        };
+       nowyButton2.IsVisible = false;
        nowyButton2.Click += (s, args) =>
        {
            liczbazaznaczona2 = int.Parse((string)nowyButton2.Content);
@@ -71,6 +75,7 @@ public partial class grawojna : Window
         {
             var nowyButton = new Button
             {
+                Background = Brushes.White,
                 Content = $"{stockgracz1[i]}",
                 HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
             };
@@ -82,7 +87,10 @@ public partial class grawojna : Window
             ListaKartgracz1.Children.Add(nowyButton);
         }
         stockgracz1.Clear();
-        ZagrajDzwiek("skibidi.wav");
+        if ((ListaKartgracz2.Children.Count!=0||stockgracz2.Count!=0)&&(ListaKartgracz1.Children.Count!=0||stockgracz1.Count!=0))
+        {
+            ZagrajDzwiek("skibidi.wav");
+        }
     }
     private void generowanieporundzieg2()
     {
@@ -90,6 +98,7 @@ public partial class grawojna : Window
         {
             var nowyButton = new Button
             {
+                Background = Brushes.White,
                 Content = $"{stockgracz2[i]}",
                 HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
             };
@@ -101,6 +110,11 @@ public partial class grawojna : Window
             ListaKartgracz2.Children.Add(nowyButton);
         }
         stockgracz2.Clear();
+        if ((ListaKartgracz2.Children.Count!=0||stockgracz2.Count!=0)&&(ListaKartgracz1.Children.Count!=0||stockgracz1.Count!=0))
+        {
+            ZagrajDzwiek("skibidi.wav");
+        }
+        
        
     }
     private void confirmg1_click(object sender, RoutedEventArgs e)
@@ -147,6 +161,17 @@ public partial class grawojna : Window
         {
             generowanieporundzieg2();
         }
+        
+        foreach (var btn in ListaKartgracz2.Children)
+        {
+            btn.IsVisible = true;
+        }
+        foreach (var btn in ListaKartgracz1.Children)
+        {
+            btn.IsVisible = false;
+        }
+        gracz1.IsVisible = false;
+        gracz2.IsVisible = true;
         endofgamu();
     }
     private void confirmg2_click(object sender, RoutedEventArgs e)
@@ -158,8 +183,55 @@ public partial class grawojna : Window
             czekgracz2 = false;
             czeker1.Content = $"";
             czeker2.Content = $"";
+            tymstock.Add(liczbazaznaczona1);
+            tymstock.Add(liczbazaznaczona2);
+            if (liczbazaznaczona1>liczbazaznaczona2)
+            {
+                for (int i = 0; i < tymstock.Count; i++)
+                {
+                    stockgracz1.Add(tymstock[i]);
+                }
+                tymstock.Clear();
+                
+            }
+            if (liczbazaznaczona1<liczbazaznaczona2)
+            {
+                for (int i = 0; i < tymstock.Count; i++)
+                {
+                    stockgracz2.Add(tymstock[i]);
+                }
+                tymstock.Clear();
+                
+            }
+            string tym1=liczbazaznaczona1.ToString();
+            string tym2=liczbazaznaczona2.ToString();
+            UsunButtong1(tym1);
+            UsunButtong2(tym2);
+            
         }
+
+        if (ListaKartgracz1.Children.Count==0)
+        {
+            generowanieporundzieg1();
+        }
+        if (ListaKartgracz2.Children.Count==0)
+        {
+            generowanieporundzieg2();
+        }
+       
+        foreach (var btn in ListaKartgracz1.Children)
+        {
+            btn.IsVisible = true;
+        }
+        foreach (var btn in ListaKartgracz2.Children)
+        {
+            btn.IsVisible = false;
+        }
+        gracz1.IsVisible = true;
+        gracz2.IsVisible = false;
+        endofgamu();
     }
+    
     private void UsunButtong1(string content)
     {
         
@@ -215,12 +287,40 @@ public partial class grawojna : Window
     {
         if (ListaKartgracz1.Children.Count==0&&stockgracz1.Count==0)
         {
+            ZagrajDzwiek("wygrana.mp3");
             wygrany.Content = "wygral gracz 2";
+            gracz2.IsVisible = true;
+            gracz1.IsVisible = false;
+            foreach (var btn in ListaKartgracz1.Children)
+            {
+                btn.IsVisible = false;
+            }
+            foreach (var btn in ListaKartgracz2.Children)
+            {
+                btn.IsVisible = false;
+            }
+            bu1.IsVisible = false;
+            bu2.IsVisible = false; 
         }
         if (ListaKartgracz2.Children.Count==0&&stockgracz2.Count==0)
         {
+            ZagrajDzwiek("wygrana.mp3");
             wygrany.Content = "wygral gracz 1";
+            gracz1.IsVisible = true;
+            gracz2.IsVisible = false;
+            foreach (var btn in ListaKartgracz1.Children)
+            {
+                btn.IsVisible = false;
+            }
+            foreach (var btn in ListaKartgracz2.Children)
+            {
+                btn.IsVisible = false;
+            }
+            bu1.IsVisible = false;
+            bu2.IsVisible = false; 
         }
+        
+       
     }
     
     

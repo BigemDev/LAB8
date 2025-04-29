@@ -23,6 +23,8 @@
     <ItemGroup>
       
         <AvaloniaResource Include="foto.png" />
+        <AvaloniaResource Include="tlo.png" />
+        <AvaloniaResource Include="photo.png" />
       
     </ItemGroup>
 </Project>
