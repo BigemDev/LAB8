@@ -379,7 +379,7 @@ public partial class grawojna : Window
     private void tru()
     {
         var random = new Random();
-        int number = random.Next(1, 4);
+        int number = random.Next(1, 6);
         switch (number)
         {
             case 1:
@@ -390,6 +390,12 @@ public partial class grawojna : Window
                 break;
             case 3:
                 ZagrajDzwiek("tru3.mp3");
+                break;
+            case 4:
+                ZagrajDzwiek("tru4.mp3");
+                break;
+            case 5:
+                ZagrajDzwiek("tru5.mp3");
                 break;
             default:
                 break;
@@ -421,9 +427,10 @@ public partial class grawojna : Window
 
     private void endofgamu()
     {
-        remis.IsVisible = false;
+        
         if (ListaKartgracz1.Children.Count==0&&stockgracz1.Count==0)
         {
+            remis.IsVisible = false;
             ZagrajDzwiek("wygrana.mp3");
             wygrany.Content = "wygral gracz 2";
             gracz2.IsVisible = true;

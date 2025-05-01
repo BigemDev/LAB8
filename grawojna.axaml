@@ -10,7 +10,7 @@
         </Window.Background>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
                 <Label x:Name="wygrany" Content="" FontSize="100" Foreground="LimeGreen"></Label>
-                <Label x:Name="remis" Content="REMIS" FontSize="20" Foreground="OrangeRed" IsVisible="False"></Label>
+                <Label x:Name="remis" Content="REMIS" FontSize="50" Foreground="OrangeRed" IsVisible="False"></Label>
                 <Panel x:Name="panelu">
                         <Image x:Name="gracz1" Source="/foto.png" Height="200" Width="200" IsVisible="True"/>
                         <Image x:Name="gracz2" Source="/photo.png" Height="200" Width="200" IsVisible="False"/>
