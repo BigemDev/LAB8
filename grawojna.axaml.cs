@@ -163,6 +163,8 @@ public partial class grawojna : Window
 
     private void confirmg1_click(object sender, RoutedEventArgs e)
     {
+        
+        
         if (liczbazaznaczona1 > 0)
         {
 
@@ -247,11 +249,17 @@ public partial class grawojna : Window
             bu1.IsVisible = false;
             endofgamu();
             liczbazaznaczona2 = 0;
+            if ((ListaKartgracz2.Children.Count != 0 || stockgracz2.Count != 0) &&
+                (ListaKartgracz1.Children.Count != 0 || stockgracz1.Count != 0))
+            {
+                tru();
+            }
         }
     }
 
     private void confirmg2_click(object sender, RoutedEventArgs e)
     {
+        
         if (liczbazaznaczona2 > 0)
         {
 
@@ -333,6 +341,11 @@ public partial class grawojna : Window
             bu2.IsVisible = false;
             endofgamu();
             liczbazaznaczona1 = 0;
+            if ((ListaKartgracz2.Children.Count != 0 || stockgracz2.Count != 0) &&
+                (ListaKartgracz1.Children.Count != 0 || stockgracz1.Count != 0))
+            {
+                tru();
+            }
         }
     }
 
@@ -363,6 +376,25 @@ public partial class grawojna : Window
         }
     }
 
+    private void tru()
+    {
+        var random = new Random();
+        int number = random.Next(1, 4);
+        switch (number)
+        {
+            case 1:
+                ZagrajDzwiek("tru1.mp3");
+                break;
+            case 2:
+                ZagrajDzwiek("tru2.mp3");
+                break;
+            case 3:
+                ZagrajDzwiek("tru3.mp3");
+                break;
+            default:
+                break;
+        }
+    }
     private void ZagrajDzwiek(string sciezka)
     {
         try
