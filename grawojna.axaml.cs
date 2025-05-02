@@ -252,7 +252,7 @@ public partial class grawojna : Window
             if ((ListaKartgracz2.Children.Count != 0 || stockgracz2.Count != 0) &&
                 (ListaKartgracz1.Children.Count != 0 || stockgracz1.Count != 0))
             {
-                tru();
+                ZagrajDzwiek("button.mp3");
             }
         }
     }
@@ -344,7 +344,7 @@ public partial class grawojna : Window
             if ((ListaKartgracz2.Children.Count != 0 || stockgracz2.Count != 0) &&
                 (ListaKartgracz1.Children.Count != 0 || stockgracz1.Count != 0))
             {
-                tru();
+                ZagrajDzwiek("button.mp3");
             }
         }
     }
