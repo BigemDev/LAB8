@@ -1,10 +1,11 @@
-
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGames"
         mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="900"
         x:Class="CardGames.balatro"
+        x:DataType="local:balatro"
         Title="balatro">
     <Grid>
         <Grid.RowDefinitions>
@@ -20,8 +21,17 @@
         <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
             <TextBox Margin="20, 30, 20, 10" Height="90" Width="170" Text="Próg"></TextBox>
             <TextBox Margin="20, 20, 20, 20" Height="90" Width="170" Text="Punkty"></TextBox>
-            <TextBox Margin="20, 180, 20, 10" Height="90" Width="170" Text="Odrzucenia"></TextBox>
-            <TextBox Margin="20, 10, 20, 20" Height="90" Width="170" Text="Ręce"></TextBox>
+            
+            <TextBox Margin="20, 180, 20, 10" Height="45" Width="170" Text="Odrzucenia"></TextBox>
+            <Button Margin="20, 10, 20, 30" HorizontalAlignment="Center" 
+                    Content="ODRZUĆ" Click="odrzucenie"
+                    Height="45" Width="170"></Button>
+            
+            <TextBox Margin="20, 30, 20, 10" Height="45" Width="170" Text="Ręce"></TextBox>
+            <Button Margin="20, 10, 20, 20" HorizontalAlignment="Center" 
+                    Content="ZAGRAJ" Click="zagranie"
+                    Height="45" Width="170"></Button>
+            
             <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="Start"></Button>
         </StackPanel>
 
@@ -30,21 +40,61 @@
             <Button Margin="40" Height="200" Width="150" Content="JOKER 2"></Button>
             <Button Margin="40" Height="200" Width="150" Content="JOKER 3"></Button>
             <Button Margin="40" Height="200" Width="150" Content="JOKER 4"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="JOKER 20"></Button>
+            <Button Margin="40" Height="200" Width="150" Content="JOKER 5"></Button>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue"/>
-
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 1"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 2"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 3"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 4"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 20"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 6"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 7"></Button>
-            <Button Margin="20" Height="190" Width="140" Content="KARTA 8"></Button>
+        <!-- <DataGrid Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue" ItemsSource="{Binding karty}"/> -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue">
+        <ItemsControl x:Name="aktywna_plansza" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="10,10,10,10"
+                        Padding="5">
+                    <Button Height="190" Width="140">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        </ItemsControl>
         </StackPanel>
+        
+        <StackPanel Grid.Row="2" Grid.Column="1" Background="DarkSlateBlue">
+        <ItemsControl x:Name="wybrane_karty" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" 
+                      ItemsSource="{Binding wylosowane}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="10,10,10,10"
+                            Padding="5">
+                        <ToggleButton Height="190" Width="140" IsChecked="{Binding czy_wybrana}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding rank}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                                <TextBlock Text="{Binding suit}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                            </StackPanel>
+                        </ToggleButton>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="7" Rows="1" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        </StackPanel>
+
+        <!-- <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue"> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 1"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 2"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 3"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 4"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 5"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 6"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 7"></ToggleButton> -->
+            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 8"></ToggleButton> -->
+        <!-- </StackPanel> -->
     </Grid>
 </Window>
 
