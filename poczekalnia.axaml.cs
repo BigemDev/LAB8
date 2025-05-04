@@ -21,6 +21,7 @@ public partial class poczekalnia : Window
         public string suit { get; set; }
         public string status { get; set; } 
         public bool czy_wybrana { get; set; }
+        public double wartosc { get; set; }
         public override string ToString() => $"{rank}{suit}";
     }
 
@@ -47,20 +48,40 @@ public partial class poczekalnia : Window
         InitializeComponent();
     }
 
-    public karta wylosuj(Random rnd) {
-        wylosowana = rnd.Next(0, deck._cards.Count);
-        while (deck._cards[wylosowana].status == "uzywana" || deck._cards[wylosowana].status == "odrzucona") {
-            wylosowana = rnd.Next(0, deck._cards.Count);
-        }
-        deck._cards[wylosowana].status = "uzywana";
-        return deck._cards[wylosowana];
-    }
 
     public void start(object sender, RoutedEventArgs e) {
+        for (int i = 0; i < deck._cards.Count; i++)
+        {
+            if (double.TryParse(deck._cards[i].rank, out double val)) {
+                deck._cards[i].wartosc = val;
+            }
+            else if (deck._cards[i].rank is "J" or "Q" or "K") {
+                deck._cards[i].wartosc = 10;
+            }
+            else if (deck._cards[i].rank == "A")
+            {
+                deck._cards[i].wartosc = 11;
+            }
+            
+            Console.WriteLine(deck._cards[i].suit);
+            Console.WriteLine(deck._cards[i].rank);
+            Console.WriteLine(deck._cards[i].wartosc);
+        }
         balatro gra = new balatro(this);
         Random rnd = new Random();
         for (int i = 0; i < 7; i++) {
-            gra.wylosowane.Add(wylosuj(rnd));
+            wylosowana = rnd.Next(0, deck._cards.Count);
+            while (deck._cards[wylosowana].status == "uzywana" || deck._cards[wylosowana].status == "odrzucona") {
+                wylosowana = rnd.Next(0, deck._cards.Count);
+            }
+            deck._cards[wylosowana].status = "uzywana";
+            gra.wylosowane.Add(deck._cards[wylosowana]);
+        }
+
+        for (int i = 0; i < deck._cards.Count; i++) {
+            if (deck._cards[i].status == "gotowa") {
+                gra.do_uzycia.Add(deck._cards[i]);
+            }
         }
         gra.Show();
     }
