@@ -7,6 +7,8 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CardGames;
 
@@ -23,9 +25,17 @@ public partial class poczekalnia : Window
         public string suit { get; set; }
         public double kolejnosc { get; set; }
         public string status { get; set; } 
-        public bool czy_wybrana { get; set; }
+        private bool _czy_wybrana { get; set; }
         public double wartosc { get; set; }
+        public bool czy_wybrana {
+            get => _czy_wybrana;
+            set { _czy_wybrana = value; OnPropertyChanged(); }
+        }
         public override string ToString() => $"{rank}{suit}";
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 
     public class Deck {
@@ -97,12 +107,12 @@ public partial class poczekalnia : Window
             }
         }
         
-        gra.wylosowane = new ObservableCollection<poczekalnia.karta>(gra.wylosowane.OrderBy(k => k.kolejnosc).ToList());
+        // gra.wylosowane = new ObservableCollection<poczekalnia.karta>(gra.wylosowane.OrderBy(k => k.kolejnosc).ToList());
         var wartosci = new[] {8, 1, 10, 4, 6};
         var sort = wartosci.OrderBy(w => w).ToArray();
         foreach (var x in gra.wylosowane) {
-            Console.WriteLine(x.suit);
-            Console.WriteLine(x.kolejnosc);
+            // Console.WriteLine(x.suit);
+            // Console.WriteLine(x.kolejnosc);
             
         }
         gra.Show();
