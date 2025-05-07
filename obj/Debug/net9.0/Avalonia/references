@@ -22,14 +22,23 @@
 /home/hoda/.nuget/packages/avalonia/11.2.1/ref/net8.0/Avalonia.Vulkan.dll
 /home/hoda/.nuget/packages/avalonia.win32/11.2.1/lib/net8.0/Avalonia.Win32.dll
 /home/hoda/.nuget/packages/avalonia.x11/11.2.1/lib/net8.0/Avalonia.X11.dll
+/home/hoda/.nuget/packages/portable.bouncycastle/1.9.0/lib/netstandard2.0/BouncyCastle.Crypto.dll
+/home/hoda/.nuget/packages/google.protobuf/3.19.4/lib/net5.0/Google.Protobuf.dll
 /home/hoda/.nuget/packages/harfbuzzsharp/7.3.0.2/lib/net6.0/HarfBuzzSharp.dll
+/home/hoda/.nuget/packages/k4os.compression.lz4/1.2.6/lib/netstandard2.0/K4os.Compression.LZ4.dll
+/home/hoda/.nuget/packages/k4os.compression.lz4.streams/1.2.6/lib/netstandard2.1/K4os.Compression.LZ4.Streams.dll
+/home/hoda/.nuget/packages/k4os.hash.xxhash/1.0.6/lib/netstandard2.0/K4os.Hash.xxHash.dll
 /home/hoda/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/Microsoft.CSharp.dll
+/home/hoda/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/hoda/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/Microsoft.VisualBasic.Core.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/Microsoft.VisualBasic.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/Microsoft.Win32.Primitives.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/Microsoft.Win32.Registry.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/mscorlib.dll
+/home/hoda/.nuget/packages/mysql.data/8.0.31/lib/net7.0/MySql.Data.dll
+/home/hoda/.nuget/packages/mysqlconnector/2.4.0/lib/net9.0/MySqlConnector.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/netstandard.dll
 /home/hoda/.nuget/packages/skiasharp/2.88.8/lib/net6.0/SkiaSharp.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.AppContext.dll
@@ -45,6 +54,7 @@
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.ComponentModel.EventBasedAsync.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.ComponentModel.Primitives.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.ComponentModel.TypeConverter.dll
+/home/hoda/.nuget/packages/system.configuration.configurationmanager/4.4.1/ref/netstandard2.0/System.Configuration.ConfigurationManager.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Configuration.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Console.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Core.dll
@@ -152,6 +162,7 @@
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Security.Cryptography.Primitives.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Security.Cryptography.X509Certificates.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Security.dll
+/home/hoda/.nuget/packages/system.security.permissions/4.7.0/ref/netcoreapp3.0/System.Security.Permissions.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Security.Principal.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Security.Principal.Windows.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Security.SecureString.dll
@@ -179,6 +190,7 @@
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Web.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Web.HttpUtility.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Windows.dll
+/home/hoda/.nuget/packages/system.windows.extensions/4.7.0/ref/netcoreapp3.0/System.Windows.Extensions.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Xml.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Xml.Linq.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Xml.ReaderWriter.dll
@@ -190,3 +202,4 @@
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/System.Xml.XPath.XDocument.dll
 /home/hoda/.nuget/packages/tmds.dbus.protocol/0.20.0/lib/net8.0/Tmds.DBus.Protocol.dll
 /home/hoda/.dotnet/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/WindowsBase.dll
+/home/hoda/.nuget/packages/mysql.data/8.0.31/lib/net7.0/ZstdNet.dll

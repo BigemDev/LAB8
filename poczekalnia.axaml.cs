@@ -131,6 +131,10 @@ public partial class poczekalnia : Window {
                 }
                 gra1.numer_gracza.Text = "GRACZ NR. 1";
                 gra2.numer_gracza.Text = "GRACZ NR. 2";
+                gra1.od.Text = "4";
+                gra2.od.Text = "4";
+                gra1.zag.Text = "4";
+                gra2.zag.Text = "4";
                 gra1.ID = 1;
                 gra2.ID = 2;
                 gra1.nastepna = gra2;
@@ -142,6 +146,21 @@ public partial class poczekalnia : Window {
                 // Console.WriteLine(x.kolejnosc);
 
             }
+        }
+    }
+
+    public void zakończenie_gry() {
+        if (gra1.wynik > gra2.wynik) {
+            gracz_1.Text = "WYGRANA";
+            gracz_2.Text = "PRZEGRANA";
+        }
+        else if (gra1.wynik < gra2.wynik) {
+            gracz_1.Text = "PRZEGRANA";
+            gracz_2.Text = "WYGRANA";
+        }
+        else if (gra1.wynik > gra2.wynik) {
+            gracz_1.Text = "REMIS";
+            gracz_2.Text = "REMIS";
         }
     }
 }

@@ -17,6 +17,16 @@
             <ColumnDefinition Width="1*"/> 
             <ColumnDefinition Width="5*"/> 
         </Grid.ColumnDefinitions>
+        
+        <Popup Height = "200" Width="500" Placement="Center"
+               VerticalAlignment="Center" HorizontalAlignment="Center"
+               x:Name="koniec_gry">
+            <Border Background="Black" Padding="10">
+                <Grid>
+                    <TextBlock Text="KONIEC GRY" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                </Grid>
+            </Border>
+        </Popup>
 
         <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
             <TextBox x:Name="numer_gracza" Margin="20, 20, 20, 20" Height="90" Width="170" Text="0"></TextBox>

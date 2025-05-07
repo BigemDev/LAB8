@@ -21,7 +21,7 @@ public partial class balatro : Window, INotifyPropertyChanged
     private int ile_dodac = 0;
     private int liczba_odrzucen = 4;
     private int liczba_zagran = 4;
-    private double wynik = 0;
+    public double wynik = 0;
     private int liczba_zagranych = 0;
     public ObservableCollection<poczekalnia.karta> do_uzycia { get; set; } = new ObservableCollection<poczekalnia.karta>();
     public ObservableCollection<poczekalnia.karta> wylosowane { get; set; } = new ObservableCollection<poczekalnia.karta>();
@@ -51,9 +51,11 @@ public partial class balatro : Window, INotifyPropertyChanged
             }
             ile_dodac = 0;
             liczba_odrzucen -= 1;
+            od.Text = Convert.ToString(liczba_odrzucen);
         }
         else {
             od.Text = "Wykorzystano wszystkie odrzucenia";
+            this.Close();
         }
     }
 
@@ -66,8 +68,8 @@ public partial class balatro : Window, INotifyPropertyChanged
                 liczba_zagranych += 1;
             }
         }
-        if (liczba_zagranych <= 5) {
-            if (liczba_zagran != 100) {
+        if (liczba_zagran != 2 ) {
+            if (liczba_zagranych <= 5) {
                 Random rnd = new Random();
                 Console.WriteLine(wylosowane.Count());
                 for (int i = wylosowane.Count() - 1; i >= 0; i--) {
@@ -112,8 +114,7 @@ public partial class balatro : Window, INotifyPropertyChanged
                          && sort[1] == sort[2] - 1
                          && sort[2] == sort[3] - 1
                          && sort[3] == sort[4] - 1 
-                         // && zagrane[0].suit == zagrane[1].suit && zagrane[0].suit == zagrane[2].suit && zagrane[0].suit == zagrane[3].suit && zagrane[0].suit == zagrane[4].suit)
-                ){
+                         &&  zagrane.All(k => k.suit == zagrane[0].suit)){
                     wynik += 600;
                 }
                 else if (//four of a kind
@@ -130,8 +131,8 @@ public partial class balatro : Window, INotifyPropertyChanged
                     wynik += 400;
                 }
                 else if (//flush
-                         zagrane.All(k => k.suit == zagrane[0].suit))
-                {
+                         zagrane.Count() == 5
+                         && zagrane.All(k => k.suit == zagrane[0].suit)) {
                     wynik += 300;
                 }
                 else if (//straight
@@ -159,24 +160,34 @@ public partial class balatro : Window, INotifyPropertyChanged
                           || (sort[3] == sort[4]) )) {
                     wynik += 30;
                 }
-
                 /*---------------*/
                 ile_dodac = 0;
                 liczba_zagran -= 1;
+                zag.Text = Convert.ToString(liczba_zagran);
                 liczba_zagranych = 0;
                 // wyswietlanie_wyniku.Text = Convert.ToString(wynik);
                 for (int i = 0; i < 5; i++) {
                     wartosci[i] = ( i + 3 ) * 7;
                 }
+
+                if (ID == 1) {
+                    baza.gracz_1.Text = Convert.ToString(wynik);
+                }
+                if (ID == 2) {
+                    baza.gracz_2.Text = Convert.ToString(wynik);
+                }
             }
             else {
-                zag.Text = "Wykorzystano wszystkie zagrania!";
+                zag.Text = "Za dużo zagranych kart!";
             }
         }
         else {
-            zag.Text = "Za dużo zagranych kart!";
+            zag.Text = "Wykorzystano wszystkie zagrania!";
+            koniec_gry.IsOpen = true;
+            baza.zakończenie_gry();
         }
     }
+    
 
     public void next(object sender, RoutedEventArgs e) {
         this.Hide();

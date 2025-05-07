@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="App.axaml" value="CardGames.csproj" />
+        <entry key="LoginPage.axaml" value="CardGames.csproj" />
         <entry key="MainWindow.axaml" value="CardGames.csproj" />
         <entry key="balatro.axaml" value="CardGames.csproj" />
         <entry key="poczekalnia.axaml" value="CardGames.csproj" />

@@ -48,10 +48,6 @@
               "target": "Package",
               "version": "[11.2.1, )"
             },
-            "Avalonia.Controls.DataGrid": {
-              "target": "Package",
-              "version": "[11.2.1, )"
-            },
             "Avalonia.Desktop": {
               "target": "Package",
               "version": "[11.2.1, )"
@@ -67,6 +63,14 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.2.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.31, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
