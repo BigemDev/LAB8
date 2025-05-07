@@ -5,6 +5,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using System;
+using System.Collections.ObjectModel;
 
 namespace CardGames;
 
@@ -19,6 +21,7 @@ public partial class poczekalnia : Window
     public class karta {
         public string rank { get; set; }
         public string suit { get; set; }
+        public double kolejnosc { get; set; }
         public string status { get; set; } 
         public bool czy_wybrana { get; set; }
         public double wartosc { get; set; }
@@ -48,24 +51,34 @@ public partial class poczekalnia : Window
         InitializeComponent();
     }
 
-
     public void start(object sender, RoutedEventArgs e) {
         for (int i = 0; i < deck._cards.Count; i++)
         {
             if (double.TryParse(deck._cards[i].rank, out double val)) {
                 deck._cards[i].wartosc = val;
+                deck._cards[i].kolejnosc = val;
             }
-            else if (deck._cards[i].rank is "J" or "Q" or "K") {
+            else if (deck._cards[i].rank is "J") {
                 deck._cards[i].wartosc = 10;
+                deck._cards[i].kolejnosc = 11;
             }
-            else if (deck._cards[i].rank == "A")
-            {
+            else if (deck._cards[i].rank is "Q") {
+                deck._cards[i].wartosc = 10;
+                deck._cards[i].kolejnosc = 12;
+            }
+            else if (deck._cards[i].rank is "K") {
+                deck._cards[i].wartosc = 10;
+                deck._cards[i].kolejnosc = 13;
+            }
+            else if (deck._cards[i].rank == "A") {
                 deck._cards[i].wartosc = 11;
+                deck._cards[i].kolejnosc = 14;
             }
             
-            Console.WriteLine(deck._cards[i].suit);
-            Console.WriteLine(deck._cards[i].rank);
-            Console.WriteLine(deck._cards[i].wartosc);
+            // Console.WriteLine(deck._cards[i].suit);
+            // Console.WriteLine(deck._cards[i].rank);
+            // Console.WriteLine(deck._cards[i].wartosc);
+            // Console.WriteLine(deck._cards[i].kolejnosc);
         }
         balatro gra = new balatro(this);
         Random rnd = new Random();
@@ -82,6 +95,15 @@ public partial class poczekalnia : Window
             if (deck._cards[i].status == "gotowa") {
                 gra.do_uzycia.Add(deck._cards[i]);
             }
+        }
+        
+        gra.wylosowane = new ObservableCollection<poczekalnia.karta>(gra.wylosowane.OrderBy(k => k.kolejnosc).ToList());
+        var wartosci = new[] {8, 1, 10, 4, 6};
+        var sort = wartosci.OrderBy(w => w).ToArray();
+        foreach (var x in gra.wylosowane) {
+            Console.WriteLine(x.suit);
+            Console.WriteLine(x.kolejnosc);
+            
         }
         gra.Show();
     }
