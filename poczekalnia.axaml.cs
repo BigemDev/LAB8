@@ -13,6 +13,7 @@ public partial class poczekalnia : Window {
     public int liczba_graczy = 1;
     public balatro gra1;
     public balatro gra2;
+    public bool win_player_one; //WYGRANA GRACZA NUMER JEDEN
     
     public class karta {
         public string rank { get; set; }
@@ -125,18 +126,18 @@ public partial class poczekalnia : Window {
         if (gra1.liczba_zagran == 0 && gra2.liczba_zagran == 0) {
             gra1.Close();
             gra2.Close();
-            if (gra1.wynik > gra2.wynik)
-            {
+            if (gra1.wynik > gra2.wynik) {
+                win_player_one = true;
                 gracz_1.Text = "WYGRANA";
                 gracz_2.Text = "PRZEGRANA";
             }
-            else if (gra1.wynik < gra2.wynik)
-            {
+            else if (gra1.wynik < gra2.wynik) {
+                win_player_one = false;
                 gracz_1.Text = "PRZEGRANA";
                 gracz_2.Text = "WYGRANA";
             }
-            else if (gra1.wynik > gra2.wynik)
-            {
+            else if (gra1.wynik > gra2.wynik) {
+                win_player_one = true;
                 gracz_1.Text = "REMIS";
                 gracz_2.Text = "REMIS";
             }
