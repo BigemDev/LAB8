@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
-            <TextBox x:Name="wyswietlanie_wyniku" Margin="20, 20, 20, 20" Height="90" Width="170" Text="0"></TextBox>
+            <TextBox x:Name="numer_gracza" Margin="20, 20, 20, 20" Height="90" Width="170" Text="0"></TextBox>
             
             <TextBox x:Name="od" Margin="20, 180, 20, 10" Height="45" Width="170" Text="Odrzucenia"></TextBox>
             <Button Margin="20, 10, 20, 30" HorizontalAlignment="Center" 
@@ -31,7 +31,8 @@
                     Content="ZAGRAJ" Click="zagranie"
                     Height="45" Width="170"></Button>
             
-            <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="Start"></Button>
+            <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="NASTĘPNY GRACZ"
+                    Click="next"></Button>
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
