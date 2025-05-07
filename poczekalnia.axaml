@@ -5,97 +5,34 @@
         mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="900"
         x:Class="CardGames.poczekalnia"
         Title="poczekalnia">
-        <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/> 
-            <RowDefinition Height="3*"/> 
-            <RowDefinition Height="2*"/> 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/> 
-            <!-- <ColumnDefinition Width="5*"/>  -->
-        </Grid.ColumnDefinitions>
-
-        <!-- <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed"> -->
-            <!-- <TextBox Margin="20, 30, 20, 10" Height="90" Width="170" Text="Próg"></TextBox> -->
-            <!-- <TextBox Margin="20, 20, 20, 20" Height="90" Width="170" Text="Punkty"></TextBox> -->
-            <!-- <TextBox Margin="20, 180, 20, 10" Height="90" Width="170" Text="Odrzucenia"></TextBox> -->
-            <!-- <TextBox Margin="20, 10, 20, 20" Height="90" Width="170" Text="Ręce"></TextBox> -->
-            <!-- <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="Start"></Button> -->
-        <!-- </StackPanel> -->
-
-        <Grid Grid.Row="0" Grid.Column="1" Background="DarkSeaGreen">
+        <Grid Background="DarkSeaGreen">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/> 
+                <ColumnDefinition Width="3*"/> 
+                <ColumnDefinition Width="3*"/> 
+                <ColumnDefinition Width="5*"/> 
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
+                    <RowDefinition Height="5*"/> 
+                    <RowDefinition Height="3*"/> 
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="5*"/> 
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Margin="40" Height="200" Width="150" Content="JOKER 1"></Button>
-            <Button Grid.Column="2" Margin="40" Height="200" Width="150" Content="JOKER 2"></Button>
-            <Button Grid.Column="3" Margin="40" Height="200" Width="150" Content="JOKER 3"></Button>
-            <Button Grid.Column="4" Margin="40" Height="200" Width="150" Content="JOKER 4"></Button>
-            <Button Grid.Column="5" Margin="40" Height="200" Width="150" Content="JOKER 20"></Button>
-        </Grid>
-        
-            <Grid Grid.Row="1" Grid.Column="1" Background="DarkSeaGreen">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                    <ColumnDefinition Width="1*"/> 
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Margin="25" Height="190" Width="140" Content="KARTA 1"></Button>
-                <Button Grid.Column="2" Margin="25" Height="190" Width="140" Content="KARTA 2"></Button>
-                <Button Grid.Column="3" Margin="25" Height="190" Width="140" Content="KARTA 3"></Button>
-                <Button Grid.Column="4" Margin="25" Height="190" Width="140" Content="KARTA 4"></Button>
-                <Button Grid.Column="5" Margin="25" Height="190" Width="140" Content="KARTA 20"></Button>
-                <Button Grid.Column="6" Margin="25" Height="190" Width="140" Content="KARTA 6"></Button>
-                <Grid Grid.Column="8">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/> 
-                        <RowDefinition Height="1*"/> 
-                        <RowDefinition Height="1*"/> 
-                        <RowDefinition Height="1*"/> 
-                        <RowDefinition Height="1*"/> 
-                        <RowDefinition Height="1*"/> 
-                        <RowDefinition Height="1*"/> 
-                    </Grid.RowDefinitions>
-                    <Button Grid.Row="2" Width="170" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Content="DODAJ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
-                    <Button Grid.Row="4" Width="170" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Content="WYMIEŃ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
-                </Grid>
-            </Grid>
-
-        <Grid Grid.Row="2" Grid.Column="1" Background="DarkSeaGreen">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-                <ColumnDefinition Width="1*"/> 
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Margin="350, 20, 100, 20" Height="100" Width="240" Click="start"
-                    Content="START" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                    Background="Beige"></Button>
-            <Button Grid.Column="2" Margin="100, 20, 350, 20" Height="100" Width="240" 
-                    Content="WYJDŹ" FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                    Background="Beige"></Button>
-        </Grid>
+            <TextBlock Grid.Column="1" Grid.Row="1"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Punkty gracza nr. 1: </TextBlock>
+            <TextBox Grid.Column="2" Grid.Row="1"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="gracz_1" Margin="5"></TextBox>
+            <TextBlock Grid.Column="1" Grid.Row="2"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Punkty gracza nr. 2: </TextBlock>
+            <TextBox Grid.Column="2" Grid.Row="2" 
+                     HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="gracz_2" Margin="5"></TextBox>
+            <Button Grid.Column="1" Grid.Row="4" Height="100" Width="240" Content="START"
+                    HorizontalAlignment="Center" 
+                    Click="start"></Button>
+            <Button Grid.Column="2" Grid.Row="4" Height="100" Width="240" Content="WYJDŹ"
+                    HorizontalAlignment="Center"
+            ></Button>
     </Grid>
 </Window>

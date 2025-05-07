@@ -19,7 +19,6 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
-            <TextBox Margin="20, 30, 20, 10" Height="90" Width="170" Text="Próg"></TextBox>
             <TextBox x:Name="wyswietlanie_wyniku" Margin="20, 20, 20, 20" Height="90" Width="170" Text="0"></TextBox>
             
             <TextBox x:Name="od" Margin="20, 180, 20, 10" Height="45" Width="170" Text="Odrzucenia"></TextBox>

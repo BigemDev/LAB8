@@ -19,7 +19,7 @@ public partial class poczekalnia : Window
         public string name { get; set; }
         public List<karta> hand { get; set; } = new List<karta>();
     }
-
+    
     public class karta {
         public string rank { get; set; }
         public string suit { get; set; }
