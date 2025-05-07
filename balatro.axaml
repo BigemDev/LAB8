@@ -9,24 +9,13 @@
         Title="balatro">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/> 
-            <RowDefinition Height="3*"/> 
-            <RowDefinition Height="2*"/> 
+            <RowDefinition Height="1*"/> 
+            <RowDefinition Height="1*"/> 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/> 
             <ColumnDefinition Width="5*"/> 
         </Grid.ColumnDefinitions>
-        
-        <Popup Height = "200" Width="500" Placement="Center"
-               VerticalAlignment="Center" HorizontalAlignment="Center"
-               x:Name="koniec_gry">
-            <Border Background="Black" Padding="10">
-                <Grid>
-                    <TextBlock Text="KONIEC GRY" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
-                </Grid>
-            </Border>
-        </Popup>
 
         <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
             <TextBox x:Name="numer_gracza" Margin="20, 20, 20, 20" Height="90" Width="170" Text="0"></TextBox>
@@ -45,15 +34,7 @@
                     Click="next"></Button>
         </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue">
-            <Button Margin="60, 40" Height="200" Width="150" Content="JOKER 1"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="JOKER 2"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="JOKER 3"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="JOKER 4"></Button>
-            <Button Margin="40" Height="200" Width="150" Content="JOKER 5"></Button>
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue">
+        <StackPanel Grid.Row="0" Grid.Column="1" Background="DarkSlateBlue">
             <ItemsControl x:Name="zagrane_karty" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" 
                           ItemsSource="{Binding zagrane}">
                 <ItemsControl.ItemTemplate>
@@ -78,7 +59,7 @@
             </ItemsControl>
         </StackPanel>
         
-        <StackPanel Grid.Row="2" Grid.Column="1" Background="DarkSlateBlue">
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue">
         <ItemsControl x:Name="wybrane_karty" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" 
                       ItemsSource="{Binding wylosowane}">
             <ItemsControl.ItemTemplate>
@@ -102,17 +83,6 @@
             </ItemsControl.ItemsPanel>
         </ItemsControl>
         </StackPanel>
-
-        <!-- <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Background="DarkSlateBlue"> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 1"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 2"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 3"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 4"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 5"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 6"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 7"></ToggleButton> -->
-            <!-- <ToggleButton Margin="20" Height="190" Width="140" Content="KARTA 8"></ToggleButton> -->
-        <!-- </StackPanel> -->
     </Grid>
 </Window>
 

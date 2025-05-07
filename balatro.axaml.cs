@@ -1,14 +1,9 @@
 using System;
-using System.Collections.Immutable;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
-using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 
 namespace CardGames;
 
@@ -19,8 +14,8 @@ public partial class balatro : Window, INotifyPropertyChanged
     public balatro nastepna;
     private int nowa;
     private int ile_dodac = 0;
-    private int liczba_odrzucen = 4;
-    private int liczba_zagran = 4;
+    public int liczba_odrzucen = 4;
+    public int liczba_zagran = 4;
     public double wynik = 0;
     private int liczba_zagranych = 0;
     public ObservableCollection<poczekalnia.karta> do_uzycia { get; set; } = new ObservableCollection<poczekalnia.karta>();
@@ -55,7 +50,6 @@ public partial class balatro : Window, INotifyPropertyChanged
         }
         else {
             od.Text = "Wykorzystano wszystkie odrzucenia";
-            this.Close();
         }
     }
 
@@ -68,7 +62,7 @@ public partial class balatro : Window, INotifyPropertyChanged
                 liczba_zagranych += 1;
             }
         }
-        if (liczba_zagran != 2 ) {
+        if (liczba_zagran != 0 ) {
             if (liczba_zagranych <= 5) {
                 Random rnd = new Random();
                 Console.WriteLine(wylosowane.Count());
@@ -105,8 +99,7 @@ public partial class balatro : Window, INotifyPropertyChanged
                     && sort[2] == 12
                     && sort[3] == 13
                     && sort[4] == 14
-                    &&  zagrane.All(k => k.suit == zagrane[0].suit))
-                {
+                    &&  zagrane.All(k => k.suit == zagrane[0].suit)) {
                     wynik += 700;
                 }
                 else if (//straight flush
@@ -160,12 +153,10 @@ public partial class balatro : Window, INotifyPropertyChanged
                           || (sort[3] == sort[4]) )) {
                     wynik += 30;
                 }
-                /*---------------*/
                 ile_dodac = 0;
                 liczba_zagran -= 1;
                 zag.Text = Convert.ToString(liczba_zagran);
                 liczba_zagranych = 0;
-                // wyswietlanie_wyniku.Text = Convert.ToString(wynik);
                 for (int i = 0; i < 5; i++) {
                     wartosci[i] = ( i + 3 ) * 7;
                 }
@@ -183,12 +174,9 @@ public partial class balatro : Window, INotifyPropertyChanged
         }
         else {
             zag.Text = "Wykorzystano wszystkie zagrania!";
-            koniec_gry.IsOpen = true;
             baza.zakończenie_gry();
         }
     }
-    
-
     public void next(object sender, RoutedEventArgs e) {
         this.Hide();
         nastepna.Show();
