@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="GameWindowBigem.axaml" value="CardGames.csproj" />
+        <entry key="LoginPage.axaml" value="CardGames.csproj" />
         <entry key="MainWindow.axaml" value="CardGames.csproj" />
       </map>
     </option>

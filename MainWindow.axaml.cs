@@ -5,6 +5,11 @@ namespace CardGames;
 
 public partial class MainWindow : Window
 {
+    public static class Globals
+    {
+        public static string username;
+        public static string password;
+    }
     public MainWindow()
     {
         InitializeComponent();

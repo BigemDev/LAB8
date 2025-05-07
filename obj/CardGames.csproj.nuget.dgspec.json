@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bigem/RiderProjects/CardGames/CardGames.csproj": {}
+    "/home/bigem/RiderProjects/LAB8/CardGames.csproj": {}
   },
   "projects": {
-    "/home/bigem/RiderProjects/CardGames/CardGames.csproj": {
+    "/home/bigem/RiderProjects/LAB8/CardGames.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bigem/RiderProjects/CardGames/CardGames.csproj",
+        "projectUniqueName": "/home/bigem/RiderProjects/LAB8/CardGames.csproj",
         "projectName": "CardGames",
-        "projectPath": "/home/bigem/RiderProjects/CardGames/CardGames.csproj",
+        "projectPath": "/home/bigem/RiderProjects/LAB8/CardGames.csproj",
         "packagesPath": "/home/bigem/.nuget/packages/",
-        "outputPath": "/home/bigem/RiderProjects/CardGames/obj/",
+        "outputPath": "/home/bigem/RiderProjects/LAB8/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bigem/.nuget/NuGet/NuGet.Config"
@@ -63,6 +63,14 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.2.1, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.31, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
@@ -79,7 +87,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.3, 9.0.3]"
+              "version": "[9.0.4, 9.0.4]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/var/run/host/usr/share/dotnet/sdk/9.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/var/run/host/usr/share/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
