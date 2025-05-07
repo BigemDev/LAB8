@@ -2,11 +2,14 @@ using System;
 using System.Media;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.IO;
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 namespace CardGames;
 
@@ -27,16 +30,14 @@ public partial class grawojna : Window
     int liczbazaznaczona2;
     string kolorzaznaczony1;
     string kolorzaznaczony2;
+    private int licznik = 1; 
     public grawojna()
     {
         InitializeComponent();
        
         
 
-        for (int i = 0; i < 3; i++)
-        {
-            generowanie();
-        }
+        
     }
 
     private string kolorwybor(int number3)
@@ -57,6 +58,9 @@ public partial class grawojna : Window
     }
     private void generowanie()
     {
+        textavatar.IsVisible = false;
+        gracz1.IsVisible = true;
+        bu1.IsVisible = true;
         ZagrajDzwiek("select.mp3");
         var random = new Random();
         int number = random.Next(2, 15);
@@ -425,13 +429,36 @@ public partial class grawojna : Window
         }
     }
 
+    private void ZagrajDzwiek2(string sciezka)
+    {
+        try
+        {
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "ffplay",
+                    Arguments = $"-nodisp -autoexit -volume 10 \"{sciezka}\"",
+                    RedirectStandardOutput = false,
+                    RedirectStandardError = false,
+                    UseShellExecute = true,
+                    CreateNoWindow = true
+                }
+            };
+            process.Start();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Błąd odtwarzania dźwięku: {ex.Message}");
+        }
+    }
     private void endofgamu()
     {
         
         if (ListaKartgracz1.Children.Count==0&&stockgracz1.Count==0)
         {
             remis.IsVisible = false;
-            ZagrajDzwiek("wygrana.mp3");
+            ZagrajDzwiek2("wygrana.mp3");
             wygrany.Content = "wygral gracz 2";
             gracz2.IsVisible = true;
             gracz1.IsVisible = false;
@@ -448,7 +475,7 @@ public partial class grawojna : Window
         }
         if (ListaKartgracz2.Children.Count==0&&stockgracz2.Count==0)
         {
-            ZagrajDzwiek("wygrana.mp3");
+            ZagrajDzwiek2("wygrana.mp3");
             wygrany.Content = "wygral gracz 1";
             gracz1.IsVisible = true;
             gracz2.IsVisible = false;
@@ -466,7 +493,173 @@ public partial class grawojna : Window
         
        
     }
-    
-    
+
+    private void avatar_wybor(object sender, RoutedEventArgs e)
+    {
+        
+        int number = int.Parse((sender as Button).Tag.ToString());
+        
+
+        switch (number)
+        {
+            case 1:
+                ZagrajDzwiek("tru1.mp3");
+                if (licznik == 1)
+                {
+                    
+                    
+                    gracz1.Source = new Bitmap("/home/mateusz/Documents/LAB8/foto.png");
+                    av1.IsVisible = false;
+                    
+                    
+
+                }
+
+                if (licznik == 2)
+                {
+                    gracz2.Source = new Bitmap("/home/mateusz/Documents/LAB8/foto.png");
+                    avatary.IsVisible = false;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        generowanie();
+                    }
+                    licznik=3;
+                }
+                break;
+            case 2:
+                ZagrajDzwiek("tru2.mp3");
+                if (licznik == 1)
+                {
+                    
+                    gracz1.Source = new Bitmap("/home/mateusz/Documents/LAB8/photo.png");
+                    av2.IsVisible = false;
+                    licznik=2;
+                }
+
+                if (licznik == 2)
+                {
+                    gracz2.Source = new Bitmap("/home/mateusz/Documents/LAB8/photo.png");
+                    avatary.IsVisible = false;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        generowanie();
+                    }
+                    licznik=3;
+                    
+
+                }
+                break;
+            case 3:
+                ZagrajDzwiek("tru3.mp3");
+                if (licznik == 1)
+                {
+                    
+                    
+                    gracz1.Source = new Bitmap("/home/mateusz/Documents/LAB8/av3.jpeg");
+                    av3.IsVisible = false;
+                    
+                    
+
+                }
+
+                if (licznik == 2)
+                {
+                    gracz2.Source = new Bitmap("/home/mateusz/Documents/LAB8/av3.jpeg");
+                    avatary.IsVisible = false;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        generowanie();
+                    }
+                    licznik=3;
+                }
+                break;
+            case 4:
+                ZagrajDzwiek("tru4.mp3");
+                if (licznik == 1)
+                {
+                    
+                    
+                    gracz1.Source = new Bitmap("/home/mateusz/Documents/LAB8/av4.jpg");
+                    av4.IsVisible = false;
+                    
+                    
+
+                }
+
+                if (licznik == 2)
+                {
+                    gracz2.Source = new Bitmap("/home/mateusz/Documents/LAB8/av4.jpg");
+                    avatary.IsVisible = false;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        generowanie();
+                    }
+                    licznik=3;
+                }
+                break;
+            case 5:
+                ZagrajDzwiek("tru5.mp3");
+                if (licznik == 1)
+                {
+                    
+                    
+                    gracz1.Source = new Bitmap("/home/mateusz/Documents/LAB8/av7.png");
+                    av7.IsVisible = false;
+                    
+                    
+
+                }
+
+                if (licznik == 2)
+                {
+                    gracz2.Source = new Bitmap("/home/mateusz/Documents/LAB8/av7.png");
+                    avatary.IsVisible = false;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        generowanie();
+                    }
+                    licznik=3;
+                }
+                break;
+            case 6:
+                ZagrajDzwiek("tru6.mp3");
+                if (licznik == 1)
+                {
+                    
+                    
+                    gracz1.Source = new Bitmap("/home/mateusz/Documents/LAB8/av6.png");
+                    av6.IsVisible = false;
+                    
+                    
+
+                }
+
+                if (licznik == 2)
+                {
+                    gracz2.Source = new Bitmap("/home/mateusz/Documents/LAB8/av6.png");
+                    avatary.IsVisible = false;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        generowanie();
+                    }
+                    licznik=3;
+                }
+                break;
+            case 7:
+                ZagrajDzwiek("ays.mp3");
+                licznik--;
+                break;
+            default:
+                break;
+            
+        }
+        licznik++;
+       
+            
+        
+        
+    }
+
+   
 
 }

@@ -25,6 +25,10 @@
         <AvaloniaResource Include="foto.png" />
         <AvaloniaResource Include="tlo.png" />
         <AvaloniaResource Include="photo.png" />
-      
+        <AvaloniaResource Include="av3.jpeg" />
+        <AvaloniaResource Include="av4.jpg" />
+        <AvaloniaResource Include="av5.jpg" />
+        <AvaloniaResource Include="av6.png" />
+        <AvaloniaResource Include="av7.png" />
     </ItemGroup>
 </Project>
