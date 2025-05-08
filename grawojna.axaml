@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CardGames.grawojna"
+        Title="grawojna">
+        <Window.Background>
+                <ImageBrush Source="avares://CardGames/Assets/tlo.png" Stretch="UniformToFill"/>
+        </Window.Background>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                <Label x:Name="textavatar" FontSize="100" Content="Wybierz Avatar" Foreground="OrangeRed"></Label>
+                <StackPanel x:Name="avatary" Spacing="10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button x:Name="av1" Width="100" Height="100" Tag="1" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/foto.png" Width="100" Height="100"/>
+                        </Button>
+                        <Button x:Name="av2" Width="100" Height="100" Tag="2" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/photo.png" Width="100" Height="100"/>
+                        </Button>
+                        <Button x:Name="av3" Width="100" Height="100" Tag="3" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/av3.jpeg" Width="100" Height="100"/>
+                        </Button>
+                        <Button x:Name="av4" Width="100" Height="100" Tag="4" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/av4.jpg" Width="100" Height="100"/>
+                        </Button>
+                        <Button x:Name="av7" Width="100" Height="100" Tag="5" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/av7.png" Width="100" Height="100"/>
+                        </Button>
+                        <Button x:Name="av6" Width="100" Height="100" Tag="6" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/av6.png" Width="100" Height="100"/>
+                        </Button>
+                        <Button x:Name="av5" Width="100" Height="100" Tag="7" Click="avatar_wybor">
+                                <Image Source="avares://CardGames/Assets/av5.jpg" Width="100" Height="100"/>
+                        </Button>
+                </StackPanel>
+                <Label x:Name="wygrany" Content="" FontSize="100" Foreground="LimeGreen"></Label>
+                <Label x:Name="remis" Content="REMIS" FontSize="50" Foreground="OrangeRed" IsVisible="False"></Label>
+                <Panel x:Name="panelu">
+                        <Image x:Name="gracz1" Source="avares://CardGames/Assets/foto.png" Height="200" Width="200" IsVisible="False"/>
+                        <Image x:Name="gracz2" Source="avares://CardGames/Assets/photo.png" Height="200" Width="200" IsVisible="False"/>
+                </Panel>
+                <Label x:Name="czeker1" Content="" HorizontalAlignment="Center"></Label>
+                <Button x:Name="bu1" Content="confirmg1" Width="200" Click="confirmg1_click" Background="Chartreuse" IsVisible="False" HorizontalAlignment="Center"/>
+                <StackPanel x:Name="ListaKartgracz1" Orientation="Vertical" />
+                <Label x:Name="czeker2" Content="" HorizontalAlignment="Center"></Label>
+                <Button x:Name="bu2" Content="confirmg2" Width="200" Click="confirmg2_click" Background="Chartreuse" IsVisible="False" HorizontalAlignment="Center"/>
+                <StackPanel x:Name="ListaKartgracz2" Orientation="Vertical" />
+        </StackPanel>
+</Window>

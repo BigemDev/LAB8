@@ -24,11 +24,23 @@ build_property.EnableCodeStyleSeverity =
 [/home/bigem/RiderProjects/LAB8/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/bigem/RiderProjects/LAB8/balatro.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/bigem/RiderProjects/LAB8/GameHistoryWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/bigem/RiderProjects/LAB8/GameWindowBigem.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/bigem/RiderProjects/LAB8/grawojna.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/bigem/RiderProjects/LAB8/LoginPage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/bigem/RiderProjects/LAB8/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/bigem/RiderProjects/LAB8/poczekalnia.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

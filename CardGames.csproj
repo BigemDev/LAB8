@@ -21,4 +21,23 @@
         <PackageReference Include="MySql.Data" Version="8.0.31" />
         <PackageReference Include="MySqlConnector" Version="2.4.0" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="poczekalnia.axaml.cs">
+        <DependentUpon>poczekalnia.axaml</DependentUpon>
+      </Compile>
+      <Compile Update="grawojna.axaml.cs">
+        <DependentUpon>grawojna.axaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <AvaloniaResource Include="Assets\av3.jpeg" />
+        <AvaloniaResource Include="Assets\av4.jpg" />
+        <AvaloniaResource Include="Assets\av5.jpg" />
+        <AvaloniaResource Include="Assets\av6.png" />
+        <AvaloniaResource Include="Assets\av7.png" />
+        <AvaloniaResource Include="Assets\foto.png" />
+        <AvaloniaResource Include="Assets\photo.png" />
+        <AvaloniaResource Include="Assets\tlo.png" />
+    </ItemGroup>
 </Project>

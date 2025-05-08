@@ -1,0 +1,88 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGames"
+        mc:Ignorable="d" d:DesignWidth="1500" d:DesignHeight="900"
+        x:Class="CardGames.balatro"
+        x:DataType="local:balatro"
+        Title="balatro">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/> 
+            <RowDefinition Height="1*"/> 
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/> 
+            <ColumnDefinition Width="5*"/> 
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Orientation="Vertical" Background="IndianRed">
+            <TextBox x:Name="numer_gracza" Margin="20, 20, 20, 20" Height="90" Width="170" Text="0"></TextBox>
+            
+            <TextBox x:Name="od" Margin="20, 180, 20, 10" Height="45" Width="170" Text="Odrzucenia"></TextBox>
+            <Button Margin="20, 10, 20, 30" HorizontalAlignment="Center" 
+                    Content="ODRZUĆ" Click="odrzucenie"
+                    Height="45" Width="170"></Button>
+            
+            <TextBox x:Name="zag" Margin="20, 30, 20, 10" Height="45" Width="170" Text="Ręce"></TextBox>
+            <Button Margin="20, 10, 20, 20" HorizontalAlignment="Center" 
+                    Content="ZAGRAJ" Click="zagranie"
+                    Height="45" Width="170"></Button>
+            
+            <Button HorizontalAlignment="Center" Margin="20, 80, 20, 20" Height="90" Width="170" Content="NASTĘPNY GRACZ"
+                    Click="next"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Background="DarkSlateBlue">
+            <ItemsControl x:Name="zagrane_karty" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" 
+                          ItemsSource="{Binding zagrane}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="10,10,10,10"
+                                Padding="5">
+                            <ToggleButton Height="190" Width="140" IsChecked="{Binding czy_wybrana}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding rank}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                                    <TextBlock Text="{Binding suit}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                                    <TextBlock Text="{Binding wartosc}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                                </StackPanel>
+                            </ToggleButton>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="7" Rows="1" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="DarkSlateBlue">
+        <ItemsControl x:Name="wybrane_karty" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" 
+                      ItemsSource="{Binding wylosowane}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="10,10,10,10"
+                            Padding="5">
+                        <ToggleButton Height="190" Width="140" IsChecked="{Binding czy_wybrana}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding rank}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                                <TextBlock Text="{Binding suit}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                                <TextBlock Text="{Binding wartosc}" FontSize="40" HorizontalAlignment="Center" TextAlignment="Center" />
+                            </StackPanel>
+                        </ToggleButton>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="7" Rows="1" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>
+

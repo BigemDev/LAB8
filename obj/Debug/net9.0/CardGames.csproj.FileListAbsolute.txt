@@ -167,7 +167,6 @@
 /home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/CardGames.AssemblyInfoInputs.cache
 /home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/CardGames.AssemblyInfo.cs
 /home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/CardGames.csproj.CoreCompileInputs.cache
-/home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/CardGames.sourcelink.json
 /home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/Avalonia/CardGames.dll
 /home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/Avalonia/CardGames.pdb
 /home/bigem/RiderProjects/LAB8/obj/Debug/net9.0/refint/Avalonia/CardGames.dll

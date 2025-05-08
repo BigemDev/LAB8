@@ -6,9 +6,10 @@
         x:Class="CardGames.MainWindow"
         Title="CardGames">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
-        <Button Content="Start Game" Width="200" Click="StartGameBigem_Click"/>
-        <!-- <Button Content="Option 2" Width="200" Click=""/> -->
-        <!-- <Button Content="Option 3" Width="200" Click=""/> -->
+        <Button Content="Poker(Bigem)" Width="200" Click="StartGameBigem_Click"/>
+        <Button Content="Balatro(Hoda):D" Width="200" Click="StartGameHoda_Click"/> 
+        <Button Content="Wojna(Mati)" Width="200" Click="Startwojna_Click"/>
         <Button Content="Exit" Width="200" Click="Exit_Click"/>
+        <Button Content="Game History" Width="200" Click="ShowGameHistory_Click"/>
     </StackPanel>
 </Window>

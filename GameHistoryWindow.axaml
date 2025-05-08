@@ -1,0 +1,11 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CardGames.GameHistoryWindow"
+        Title="Game History"
+        Width="600" Height="400">
+    <ScrollViewer>
+        <StackPanel x:Name="HistoryContainer" Margin="10" Spacing="5">
+            <TextBlock Text="Your Game History:" FontSize="16" FontWeight="Bold"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

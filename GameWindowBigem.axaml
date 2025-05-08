@@ -5,9 +5,7 @@
         Width="1000" Height="700">
 
   <Grid RowDefinitions="Auto,*" ColumnDefinitions="3*,1*">
-    <!-- (optional) top row for menus or headers -->
-    
-    <!-- Table area -->
+
     <Border Grid.Row="1" Grid.Column="0"
             Margin="10" Background="#003300" CornerRadius="10" Padding="10">
       <StackPanel Spacing="10">
@@ -15,7 +13,7 @@
                    FontWeight="Bold"
                    Foreground="White"
                    HorizontalAlignment="Center"/>
-        <TextBlock Name="CommunityCardsPlaceholder"
+        <TextBlock x:Name="CommunityCardsPlaceholder"
                    Text="No cards yet"
                    Foreground="White"
                    HorizontalAlignment="Center"/>
@@ -24,26 +22,22 @@
                    FontWeight="Bold"
                    Foreground="White"
                    Margin="0,10,0,0"/>
-        <StackPanel Name="BetsDisplay"
+        <StackPanel x:Name="BetsDisplay"
                     Orientation="Vertical"
                     Background="#002200"
                     />
       </StackPanel>
     </Border>
 
-    <!-- Control panel -->
     <StackPanel Grid.Row="1" Grid.Column="1"
                 Margin="10"
                 Spacing="8">
 
-      <!-- New: show whose turn it is -->
-      <TextBlock Name="CurrentTurnText"
+      <TextBlock x:Name="CurrentTurnText"
                  FontSize="16"
                  FontWeight="Bold"
                  Foreground="White"/>
-
-      <!-- New: fixed “Your hand” display -->
-      <TextBlock Name="YourHandText"
+      <TextBlock x:Name="YourHandText"
                  FontSize="14"
                  FontWeight="SemiBold"
                  Foreground="White"/>
@@ -51,40 +45,40 @@
       <TextBlock Text="Status / Log"
                  FontWeight="Bold"
                  Foreground="White"/>
-      <TextBox Name="GameLog"
+      <TextBox x:Name="GameLog"
                AcceptsReturn="True"
                IsReadOnly="True"
                Height="200"
                />
-
-      <!-- Betting input -->
-      <TextBox Name="BetAmountTextBox"
+      <TextBox x:Name="BetAmountTextBox"
                Width="120"
                Watermark="Enter Bet Amount"/>
-
-      <!-- Action buttons -->
       <StackPanel Orientation="Horizontal"
                   Spacing="5">
-        <Button Content="Start Game"
+        <Button x:Name="StartGameButton"
+                Content="Start Game"
                 Click="StartGame_Click"/>
-        <Button Content="Bet"
+        <Button x:Name="BetButton"
+                Content="Bet"
                 Click="Bet_Click"/>
-        <Button Content="Call"
+        <Button x:Name="CallButton"
+                Content="Call"
                 Click="Call_Click"/>
-        <Button Content="Check"
+        <Button x:Name="CheckButton"
+                Content="Check"
                 Click="Check_Click"/>
-        <Button Content="Fold"
+        <Button x:Name="FoldButton"
+                Content="Fold"
                 Click="Fold_Click"/>
-        <Button Content="Leave Game"
+        <Button x:Name="LeaveGameButton"
+                Content="Leave Game"
                 Click="LeaveGame_Click"/>
       </StackPanel>
-
-      <!-- Pot display -->
       <TextBlock Text="Pot"
                  FontWeight="Bold"
                  Foreground="White"
                  Margin="0,10,0,0"/>
-      <TextBlock Name="PotText"
+      <TextBlock x:Name="PotText"
                  FontSize="14"
                  Foreground="White"/>
     </StackPanel>

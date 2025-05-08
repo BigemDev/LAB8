@@ -2,12 +2,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="350"
         x:Class="CardGames.LoginPage"
         Title="Login">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
         <TextBox Name="UsernameTextBox" Width="200" Watermark="Username"/>
         <TextBox Name="PasswordBox" Width="200" Watermark="Password" PasswordChar="*" />
         <Button Content="Login" Width="200" Click="Login_Click"/>
+        <TextBlock Text="No account?" HorizontalAlignment="Center"/>
+        <Button Content="Register" Width="200" Click="Register_Click"/>
     </StackPanel>
 </Window>
